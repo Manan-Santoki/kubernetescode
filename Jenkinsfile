@@ -14,7 +14,7 @@ pipeline {
         }
         stage("Build") {
             agent {
-                docker { image 'raptor1702/test' }
+                docker { image 'hello-world' }
             }
             steps {
                 sh 'docker build test'
