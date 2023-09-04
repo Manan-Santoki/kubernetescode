@@ -12,6 +12,15 @@ pipeline {
                 checkout scm
 	    }
         }
+        stage("Build") {
+            agent {
+                docker { image 'raptor1702:test' }
+            }
+            steps {
+                sh 'docker build test'
+                
+	    }
+        }        
         stage("Test") {
             steps {
                 sh('chmod 777 run_all_tests.sh ')
