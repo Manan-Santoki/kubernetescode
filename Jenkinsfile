@@ -17,7 +17,7 @@ pipeline {
                 docker { image 'hello-world' }
             }
             steps {
-                sh 'docker build test'
+                sh 'docker build .'
                 
 	    }
         }        
