@@ -13,11 +13,9 @@ pipeline {
 	    }
         }
         stage("Build") {
-            agent {
-                docker { image 'hello-world' }
-            }
             steps {
-                sh 'docker build .'
+                sh('chmod 777 docker.sh ')
+                sh('./docker.sh')
                 
 	    }
         }        
